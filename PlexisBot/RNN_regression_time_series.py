@@ -116,16 +116,11 @@ class recurrent_neural_net:
         raw_data /= std
 
         # create input and predictive timeseries output
-        sampling_rate = 10  # sample 1 point of data every 12 seconds
-        # use twenty five, 12 second pieces of data (last 5 mins worth of data)
-        sequence_length = 360
-        # predict 1 min into future
-        delay = sampling_rate * (sequence_length + 36)
-        # optimial is 32 timesteps (mins) at a time //INCREASED TO 64 to increase gpu usage
+        sampling_rate = 10  # sample 1 point of data every 10 seconds
+        sequence_length = 360 # use 360 samples (1 hour total)
+        delay = sampling_rate * (sequence_length + 360) #predict 1 hour into future
+        #NOTE optimial is 32 timesteps (mins) at a time //INCREASED TO 64 to increase gpu usage
         batch_size = 32
-
-        # use the last 853 datapoints to predict the next 853 datapoints that hasn't happened
-        # returns inputs and target output in a tuple(sample, target)
 
         global train_dataset, val_dataset, test_dataset
         train_dataset = keras.utils.timeseries_dataset_from_array(
@@ -189,7 +184,6 @@ class recurrent_neural_net:
         print(model.weights)
         predictions = model.predict(test_dataset)
         print(predictions[0:10])
-        print("\n\n\n\n\n\n\n")
 
         for count, row in enumerate(range(num_val_samples + num_train_samples, num_val_samples + num_train_samples + 10)):
             print('Predicted Value: ', predictions[count][0] * std[3] + mean[3],
