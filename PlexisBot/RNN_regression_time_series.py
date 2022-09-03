@@ -80,19 +80,19 @@ class recurrent_neural_net:
         """prepare data to feed into recurrent neural net"""
 
         # prepare some data for visualizer()
-        global temperature, raw_data, sequence_length
+        global price_data, raw_data, sequence_length
 
         # Parsing data
-        # the goal is to trasnfer column 2 (temperature) in the temperature array
-        # everything else including temperature but not including date time column is stored in raw data
-        temperature = np.zeros((len(self.features),))  # now shape is (420451,)
-        print(temperature.shape)
+        # the goal is to trasnfer column 2 (price_data) in the price_data array
+        # everything else including price_data but not including date time column is stored in raw data
+        price_data = np.zeros((len(self.features),))  # now shape is (420451,)
+        print(price_data.shape)
         raw_data = np.zeros((len(self.features), len(self.header) - 1))
         print(raw_data.shape)
 
         for i, line in enumerate(self.features):
             values = [float(column) for column in line.split(',')[1:]]
-            temperature[i] = values[4]
+            price_data[i] = values[4]
             raw_data[i, :] = values[:]
 
         # Prepare some data for training()
@@ -125,7 +125,7 @@ class recurrent_neural_net:
         global train_dataset, val_dataset, test_dataset
         train_dataset = keras.utils.timeseries_dataset_from_array(
             raw_data[:-delay],
-            targets=temperature[delay:],
+            targets=price_data[delay:],
             sampling_rate=sampling_rate,
             sequence_length=sequence_length,
             shuffle=True,
@@ -135,7 +135,7 @@ class recurrent_neural_net:
 
         val_dataset = keras.utils.timeseries_dataset_from_array(
             data=raw_data[:-delay],
-            targets=temperature[delay:],
+            targets=price_data[delay:],
             sampling_rate=sampling_rate,
             sequence_length=sequence_length,
             shuffle=True,
@@ -145,7 +145,7 @@ class recurrent_neural_net:
 
         test_dataset = keras.utils.timeseries_dataset_from_array(
             data=raw_data[:-delay],
-            targets=temperature[delay:],
+            targets=price_data[delay:],
             sampling_rate=sampling_rate,
             sequence_length=sequence_length,
             shuffle=True,
