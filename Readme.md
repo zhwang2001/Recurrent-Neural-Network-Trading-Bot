@@ -23,6 +23,6 @@ Some information on the bot...
  - Mean absolute error = $6.54 on Tesla stock 1 hour into future (On average predictions are $6.50 off from target price)
 
 #NOTE
-config.keras files are for the LSTM layers
-Included the famous F12010 dataset from the nordic stock exchange
-Other datasets to play around with
+ - Config.keras files are for the LSTM layers
+ - Included the famous F12010 dataset from the nordic stock exchange
+ - Other datasets are available to play around with
