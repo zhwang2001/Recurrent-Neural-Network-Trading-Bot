@@ -21,3 +21,8 @@ Some information on the bot...
  - Incorporates LSTM layers to prevent gradient vanishing
  - 6 months of IBKR historical data at a 1 second interval harvested for use in training
  - Mean absolute error = $6.54 on Tesla stock 1 hour into future (On average predictions are $6.50 off from target price)
+
+#NOTE
+ - Config.keras files are for the LSTM layers
+ - Included the famous F12010 dataset from the nordic stock exchange
+ - Other datasets are available to play around with
