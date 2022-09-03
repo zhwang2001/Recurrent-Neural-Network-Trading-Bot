@@ -1,6 +1,6 @@
 #Time series forecasting with a Recurrent Neural Network
 
-This trading bot was an attempt at building a passive source of income
+This trading bot was an attempt at building a passive source of income through options trading on the stock market
 Over time i've added higher quality indicator data to my training datasets and the cost functions have decreased
 However this bot is missing 1 crucial piece of data that will greatly enhance its performance
 Market depth / level 2 data has been well documented in research and at trading firms as having strong predictive power
@@ -28,6 +28,7 @@ Some information on the bot...
  - Other datasets are available to play around with
 
 ##Requirements 
+ - Must sign up for an IBKR pro account with options trading enabled
  - Only functional with nvidia cuda gpus. Will not work on cpus
  - when running main.py or RNN_regression_time_series.py make sure your current directory is in the folder PlexisBot
  ex. C://Users/charl/Recurrent-Neural-Network-Trading-Bot/PlexisBot
