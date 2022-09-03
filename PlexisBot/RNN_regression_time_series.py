@@ -62,7 +62,8 @@ class recurrent_neural_net:
 
     def __init__(self):
         """Preparation of file"""
-        file_name = os.path.join("v4.csv")
+        cwd = os.getcwd()
+        file_name = os.path.join(cwd, "datasets","v4.csv")
 
         with open(file_name) as file:
             data = file.read()
