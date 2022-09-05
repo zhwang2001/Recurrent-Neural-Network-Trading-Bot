@@ -28,11 +28,8 @@ Some information on the bot...
  - Other datasets are available to play around with
 
 ##Requirements 
-<<<<<<< HEAD
  - Must sign up for an IBKR pro account with options trading enabled
-=======
  - Must sign upfor an IBKR pro account with options trading enabled
->>>>>>> e00cd55b357b48f0a303c8c4720ce5b9a9965c1a
  - Only functional with nvidia cuda gpus. Will not work on cpus
  - when running main.py or RNN_regression_time_series.py make sure your current directory is in the folder PlexisBot
  ex. C://Users/charl/Recurrent-Neural-Network-Trading-Bot/PlexisBot
