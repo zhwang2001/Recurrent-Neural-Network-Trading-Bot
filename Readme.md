@@ -20,7 +20,7 @@ Some information on the bot...
  - Built on Tensorflow and Keras
  - Incorporates LSTM layers to prevent gradient vanishing
  - 6 months of IBKR historical data at a 1 second interval harvested for use in training
- - Mean absolute error = $6.54 on Tesla stock 1 hour into future (On average predictions are $6.50 off from target price)
+ - Mean absolute error best performance = $6.54 on Tesla stock forecasting 1 hour into the future
 
 ##NOTE
  - Config.keras files are for the LSTM layers
