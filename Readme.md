@@ -34,3 +34,5 @@ Some information on the bot...
  - when running main.py or RNN_regression_time_series.py make sure your current directory is in the folder PlexisBot
  ex. C://Users/charl/Recurrent-Neural-Network-Trading-Bot/PlexisBot
 
+![image](https://user-images.githubusercontent.com/59357147/188558294-1a3db051-91c3-481d-8a09-dba3badf2ba7.png)
+
